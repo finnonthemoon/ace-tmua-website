@@ -23,7 +23,7 @@ stored in this repository.
 
 The canonical and social-sharing URLs currently use:
 
-`https://finnonthemoon.github.io/ace-tmua/`
+`https://acetmua.aceitstudios.co.uk/`
 
 Once the new repository or custom domain is live, replace that address in:
 
