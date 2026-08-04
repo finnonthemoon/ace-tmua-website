@@ -817,6 +817,116 @@ ul {
   gap: 18px;
 }
 
+.comparison-table {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  background: #fffaf3;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 28px;
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.16);
+}
+
+.comparison-row {
+  display: grid;
+  min-height: 118px;
+  grid-template-columns: minmax(210px, 1.25fr) repeat(2, minmax(180px, 1fr));
+  border-bottom: 1px solid #eadfd5;
+}
+
+.comparison-row:last-child {
+  border-bottom: 0;
+}
+
+.comparison-row > div {
+  display: flex;
+  padding: 24px 27px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  color: #5f534c;
+  border-right: 1px solid #eadfd5;
+}
+
+.comparison-row > div:last-child {
+  color: #fff7f1;
+  background: linear-gradient(145deg, #f86c18, #e34a05);
+  border-right: 0;
+}
+
+.comparison-row [role="rowheader"] strong {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.comparison-row [role="rowheader"] span:not(.status) {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.comparison-row--header {
+  min-height: 94px;
+}
+
+.comparison-row--header > div {
+  background: #fff2df;
+}
+
+.comparison-row--header > div:first-child {
+  color: var(--ink);
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+.comparison-row--header > div:nth-child(2),
+.comparison-row--header > div:nth-child(3) {
+  align-items: flex-start;
+}
+
+.comparison-plan {
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+}
+
+.comparison-row--header strong {
+  color: var(--ink);
+  font-size: 1.45rem;
+}
+
+.comparison-row--header > div:last-child strong {
+  color: #fff;
+}
+
+.comparison-row--header small {
+  font-size: 0.68rem;
+}
+
+.status {
+  width: fit-content;
+  padding: 4px 8px;
+  font-size: 0.61rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.status--included {
+  color: #236745;
+  background: #ddf4e7;
+}
+
+.status--limited {
+  color: #8a531d;
+  background: #ffebc8;
+}
+
+.comparison-row > div:last-child .status--included {
+  color: #a43d07;
+  background: #fff;
+}
+
 .plan-card {
   padding: 37px;
   color: var(--ink);
@@ -964,6 +1074,10 @@ ul {
 
 .closing-card > div {
   max-width: 610px;
+}
+
+.closing-card > div:only-child {
+  max-width: 760px;
 }
 
 .closing .kicker {
@@ -1463,6 +1577,36 @@ ul {
   .plan-grid,
   .faq-grid {
     grid-template-columns: 1fr;
+  }
+
+  .comparison-table {
+    overflow: hidden;
+  }
+
+  .comparison-row {
+    min-width: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .comparison-row:not(.comparison-row--header) > div:first-child {
+    grid-column: 1 / -1;
+    padding-block: 18px;
+    background: #fff2df;
+    border-right: 0;
+    border-bottom: 1px solid #eadfd5;
+  }
+
+  .comparison-row--header > div:first-child {
+    display: none;
+  }
+
+  .comparison-row > div {
+    padding: 20px 16px;
+  }
+
+  .comparison-row--header > div:nth-child(2),
+  .comparison-row--header > div:nth-child(3) {
+    align-items: center;
   }
 
   .proof-grid {
