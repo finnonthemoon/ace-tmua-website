@@ -1,0 +1,17 @@
+{
+  "name": "Ace TMUA",
+  "short_name": "Ace TMUA",
+  "description": "Focused TMUA lessons, original practice questions, full mock papers and progress tracking.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#10131a",
+  "theme_color": "#ff6b19",
+  "icons": [
+    {
+      "src": "assets/brand/logo.png",
+      "sizes": "1254x1254",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
