@@ -62,6 +62,9 @@ function finishSubmission() {
     "You’re on the list. Watch your inbox for Ace TMUA updates.",
     "success",
   );
+  window.aceAnalytics?.track("generate_lead", {
+    method: "waitlist",
+  });
 }
 
 responseFrame?.addEventListener("load", finishSubmission);
