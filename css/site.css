@@ -851,22 +851,8 @@ ul {
 }
 
 .plan-comparison__top {
-  display: flex;
-  min-height: 112px;
-  padding: 26px 30px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  padding: 26px 30px 24px;
   background: linear-gradient(135deg, #fff8eb, #fff1d8);
-}
-
-.plan-comparison__eyebrow {
-  margin: 0 0 5px;
-  color: var(--orange);
-  font-size: 0.68rem;
-  font-weight: 900;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
 }
 
 .plan-comparison__top h3 {
@@ -875,31 +861,18 @@ ul {
   letter-spacing: -0.04em;
 }
 
-.premium-pill {
-  display: inline-flex;
-  min-height: 40px;
-  padding: 0 16px;
-  align-items: center;
-  gap: 7px;
-  color: #7a3e00;
-  background: #ffd98f;
-  border: 1px solid #efbf64;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.premium-pill span {
-  font-size: 0.95rem;
+.plan-comparison__top p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 .plan-comparison__legend {
   display: grid;
   min-height: 48px;
   padding: 0 24px;
-  grid-template-columns: minmax(250px, 1.45fr) repeat(2, minmax(185px, 1fr));
+  grid-template-columns: minmax(250px, 1fr) repeat(2, 120px);
   align-items: center;
   gap: 12px;
   color: #89796e;
@@ -922,9 +895,9 @@ ul {
 
 .plan-feature {
   display: grid;
-  min-height: 126px;
-  padding: 22px 24px;
-  grid-template-columns: minmax(250px, 1.45fr) repeat(2, minmax(185px, 1fr));
+  min-height: 76px;
+  padding: 16px 24px;
+  grid-template-columns: minmax(250px, 1fr) repeat(2, 120px);
   align-items: center;
   gap: 12px;
   border-bottom: 1px solid #f0e4d3;
@@ -944,81 +917,30 @@ ul {
   line-height: 1.3;
 }
 
-.plan-feature__copy p {
-  margin: 5px 0 0;
-  color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.55;
-}
-
 .plan-status {
-  display: flex;
-  min-height: 70px;
-  padding: 12px 14px;
+  display: grid;
+  min-height: 36px;
   align-items: center;
-  gap: 11px;
-  border: 1px solid;
-  border-radius: 17px;
+  justify-items: center;
 }
 
 .plan-status--yes {
-  color: #256b49;
-  background: #f0f8f3;
-  border-color: #cbe7d5;
+  color: var(--ink);
 }
 
 .plan-status--no {
-  color: #a53e3e;
-  background: #fff2f1;
-  border-color: #f0cdca;
+  color: #b4aaa1;
 }
 
 .plan-status--premium {
   color: #237a50;
-  background: #e8f7ee;
-  border-color: #a9d8ba;
 }
 
 .plan-status__icon {
-  display: grid;
-  width: 32px;
-  height: 32px;
-  flex: 0 0 32px;
-  place-items: center;
-  color: #fff;
-  background: #2d835a;
-  border-radius: 50%;
-  font-size: 1.2rem;
+  color: inherit;
+  font-size: 1.45rem;
   font-weight: 900;
   line-height: 1;
-}
-
-.plan-status--no .plan-status__icon {
-  background: #c84646;
-}
-
-.plan-status > span:last-child {
-  display: grid;
-  min-width: 0;
-  gap: 2px;
-}
-
-.plan-status small {
-  color: var(--muted);
-  font-size: 0.58rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.plan-status strong {
-  color: inherit;
-  font-size: 0.78rem;
-  line-height: 1.25;
-}
-
-.plan-status--premium small {
-  color: #41755b;
 }
 
 .plan-card {
@@ -1745,58 +1667,32 @@ ul {
   }
 
   .plan-comparison__top {
-    min-height: 0;
     padding: 22px 20px;
-    align-items: flex-start;
-  }
-
-  .premium-pill {
-    min-height: 34px;
-    padding-inline: 12px;
-    font-size: 0.61rem;
   }
 
   .plan-comparison__legend {
-    padding: 13px 16px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .plan-comparison__legend span:first-child {
-    display: none;
+    min-height: 44px;
+    padding: 0 16px;
+    grid-template-columns: minmax(0, 1fr) repeat(2, 64px);
   }
 
   .plan-feature {
-    min-height: 0;
-    padding: 19px 16px;
-    grid-column: 1 / -1;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px;
+    min-height: 64px;
+    padding: 13px 16px;
+    grid-template-columns: minmax(0, 1fr) repeat(2, 64px);
+    gap: 4px;
   }
 
   .plan-feature__copy {
-    grid-column: 1 / -1;
-    padding: 0 2px 5px;
-  }
-
-  .plan-feature__copy p {
-    max-width: 440px;
+    padding-right: 8px;
   }
 
   .plan-status {
-    min-height: 66px;
-    padding: 10px;
-    gap: 8px;
+    min-height: 32px;
   }
 
   .plan-status__icon {
-    width: 28px;
-    height: 28px;
-    flex-basis: 28px;
-    font-size: 1.05rem;
-  }
-
-  .plan-status strong {
-    font-size: 0.7rem;
+    font-size: 1.3rem;
   }
 
   .proof-grid {
