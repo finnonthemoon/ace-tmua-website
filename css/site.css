@@ -1227,7 +1227,8 @@ ul {
   border-bottom: 1px solid var(--line);
 }
 
-.legal-hero--privacy {
+.legal-hero--privacy,
+.legal-hero--terms {
   padding-bottom: 76px;
 }
 

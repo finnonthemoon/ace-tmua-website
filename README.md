@@ -7,6 +7,7 @@ React Native application, lesson data or practice-question bank.
 ## Contents
 
 - `index.html` — marketing and early-access page
+- `terms.html` — public terms for the app, website and subscriptions
 - `privacy.html` — public privacy policy
 - `support.html` — public support page
 - `css/` — website styling
@@ -28,6 +29,7 @@ The canonical and social-sharing URLs currently use:
 Once the new repository or custom domain is live, replace that address in:
 
 - `index.html`
+- `terms.html`
 - `privacy.html`
 - `support.html`
 
