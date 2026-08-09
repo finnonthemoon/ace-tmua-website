@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Share feedback, report a problem or suggest an improvement for Ace TMUA."
+    />
+    <meta name="author" content="AceIt Studios" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ff6b19" />
+    <link rel="canonical" href="https://acetmua.aceitstudios.co.uk/feedback.html" />
+    <link rel="icon" type="image/png" href="assets/brand/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/brand/logo.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ace TMUA" />
+    <meta property="og:title" content="Send feedback | Ace TMUA" />
+    <meta
+      property="og:description"
+      content="Report a problem, suggest a feature or tell us what you think about Ace TMUA."
+    />
+    <meta property="og:url" content="https://acetmua.aceitstudios.co.uk/feedback.html" />
+    <meta
+      property="og:image"
+      content="https://acetmua.aceitstudios.co.uk/assets/brand/logo.png"
+    />
+    <meta property="og:image:alt" content="Ace TMUA app icon" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Send feedback | Ace TMUA" />
+    <meta
+      name="twitter:description"
+      content="Help us make Ace TMUA better for ambitious students."
+    />
+    <title>Send feedback | Ace TMUA</title>
+    <link rel="stylesheet" href="css/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header site-header--solid">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="Ace TMUA home">
+          <img src="assets/brand/logo.png" alt="" width="44" height="44" />
+          <span>Ace TMUA</span>
+        </a>
+        <nav class="header-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="feedback-main">
+      <section class="feedback-hero">
+        <div class="feedback-orb feedback-orb--one" aria-hidden="true"></div>
+        <div class="feedback-orb feedback-orb--two" aria-hidden="true"></div>
+        <div class="shell feedback-layout">
+          <div class="feedback-intro">
+            <p class="kicker">Shape Ace TMUA</p>
+            <h1>Your feedback helps us build what matters.</h1>
+            <p class="feedback-lede">
+              Found something confusing? Spotted a problem? Have an idea that
+              would make revision better? Send it straight to the team.
+            </p>
+            <div class="feedback-promises" aria-label="What happens next">
+              <div>
+                <span aria-hidden="true">01</span>
+                <p><strong>We read every message.</strong> Useful detail beats polished wording.</p>
+              </div>
+              <div>
+                <span aria-hidden="true">02</span>
+                <p><strong>You stay in control.</strong> Review the message in your email app before sending.</p>
+              </div>
+              <div>
+                <span aria-hidden="true">03</span>
+                <p><strong>No sensitive information.</strong> Never include passwords or payment details.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="feedback-card">
+            <div class="feedback-card__heading">
+              <p class="kicker">Send a message</p>
+              <h2>What should we know?</h2>
+              <p>Usually takes less than two minutes.</p>
+            </div>
+
+            <form
+              id="feedback-form"
+              class="feedback-form"
+              method="post"
+              novalidate
+            >
+              <input type="hidden" name="form_type" value="feedback" />
+              <input id="feedback-source" type="hidden" name="source" value="website" />
+              <input id="feedback-platform" type="hidden" name="platform" value="" />
+              <input id="feedback-version" type="hidden" name="app_version" value="" />
+
+              <div class="form-field">
+                <label for="feedback-category">What is this about?</label>
+                <select id="feedback-category" name="category" required>
+                  <option value="">Choose one</option>
+                  <option value="problem">Something is not working</option>
+                  <option value="question">A question or explanation</option>
+                  <option value="idea">A feature or improvement</option>
+                  <option value="general">General feedback</option>
+                </select>
+                <p class="field-error" id="category-error"></p>
+              </div>
+
+              <div class="form-field">
+                <label for="feedback-message">Your feedback</label>
+                <textarea
+                  id="feedback-message"
+                  name="message"
+                  rows="7"
+                  minlength="10"
+                  maxlength="4000"
+                  placeholder="Tell us what happened, what you expected, or what you would change…"
+                  required
+                ></textarea>
+                <div class="field-meta">
+                  <span class="field-error" id="message-error"></span>
+                  <span id="feedback-count">0 / 4000</span>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="feedback-email">
+                  Email address <span>(optional)</span>
+                </label>
+                <input
+                  id="feedback-email"
+                  name="reply_email"
+                  type="email"
+                  autocomplete="email"
+                  maxlength="254"
+                  placeholder="you@example.com"
+                />
+                <p class="field-hint">Add this only if you are happy for us to reply.</p>
+                <p class="field-error" id="email-error"></p>
+              </div>
+
+              <div class="visually-hidden" aria-hidden="true">
+                <label for="feedback-website">Leave this field empty</label>
+                <input
+                  id="feedback-website"
+                  name="website"
+                  type="text"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
+
+              <button class="button feedback-submit" type="submit">
+                Send feedback <span aria-hidden="true">→</span>
+              </button>
+              <p id="feedback-status" class="feedback-status" role="status" aria-live="polite"></p>
+              <p class="feedback-privacy">
+                We store your response in our Google feedback sheet so the team
+                can review it. See our
+                <a href="privacy.html">privacy policy</a>.
+              </p>
+            </form>
+
+            <div
+              class="feedback-success"
+              id="feedback-success"
+              tabindex="-1"
+              hidden
+            >
+              <span class="feedback-success__icon" aria-hidden="true">✓</span>
+              <p class="kicker">Feedback received</p>
+              <h2>Thank you — it’s with the team.</h2>
+              <p>Your response has been saved. You can safely close this page.</p>
+              <button
+                class="button button--secondary"
+                id="feedback-again"
+                type="button"
+              >
+                Send another response
+              </button>
+            </div>
+
+            <iframe
+              class="visually-hidden"
+              id="feedback-frame"
+              name="feedback-frame"
+              title="Feedback submission response"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="feedback-help">
+        <div class="shell feedback-help__inner">
+          <div>
+            <p class="kicker">Need account or payment help?</p>
+            <h2>Use our support page for the quickest route.</h2>
+          </div>
+          <a class="button button--secondary" href="support.html">
+            Visit support <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <a class="brand brand--footer" href="index.html">
+          <img src="assets/brand/logo.png" alt="" width="38" height="38" />
+          <span>Ace TMUA</span>
+        </a>
+        <nav aria-label="Footer navigation">
+          <a href="feedback.html" aria-current="page">Feedback</a>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <button class="footer-link" type="button" data-cookie-settings>Cookie settings</button>
+        </nav>
+        <p class="copyright">© 2026 AceIt Studios</p>
+      </div>
+      <div class="shell disclaimer">
+        Ace TMUA is an independent preparation app. It is not affiliated with or
+        endorsed by the official TMUA administrators or any university.
+      </div>
+    </footer>
+    <script src="js/analytics.js" defer></script>
+    <script src="js/feedback.js" defer></script>
+  </body>
+</html>
