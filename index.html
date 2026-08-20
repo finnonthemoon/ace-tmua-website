@@ -94,6 +94,31 @@
       })();
     </script>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+        // 1. Check for specific app signatures (expanded for TikTok variants)
+        const isKnownApp =
+          /Instagram|TikTok|trill|ByteLocale|BytedanceWebview|musical_ly|FBAN|FBAV|Twitter|LinkedIn|Snapchat|Line/i.test(
+            ua,
+          );
+
+        // 2. Check for generic iOS webviews (iPhone/iPad but missing "Safari")
+        const isIOS = /iPhone|iPad|iPod/i.test(ua);
+        const isSafari = /Safari/i.test(ua);
+        // If it's iOS and doesn't say Safari, it's an embedded browser (like TikTok's default wrapper)
+        const isGenericIOSWebview = isIOS && !isSafari;
+
+        if (isKnownApp || isGenericIOSWebview) {
+          const notice = document.getElementById("webview-notice");
+          if (notice) {
+            notice.style.display = "block";
+          }
+        }
+      });
+    </script>
+
     <link rel="stylesheet" href="css/site.css" />
   </head>
   <body>
