@@ -7,6 +7,20 @@ function gtag() {
   window.dataLayer.push(arguments);
 }
 
+(function () {
+    const isEmbeddedWebview = /Instagram|TikTok|FBAN|FBAV|Twitter|LinkedIn|Snapchat|Line/i.test(
+      navigator.userAgent || navigator.vendor || window.opera
+    );
+
+    if (isEmbeddedWebview) {
+      const notice = document.getElementById('webview-notice');
+      if (notice) {
+        notice.style.display = 'block';
+      }
+    }
+  })();
+
+
 gtag("consent", "default", {
   ad_storage: "denied",
   ad_user_data: "denied",
