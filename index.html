@@ -44,40 +44,54 @@
     <title>Ace TMUA | Lock in. Ace the TMUA.</title>
 
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
           {
-            "@type": "Organization",
-            "@id": "https://aceitstudios.co.uk/#organization",
-            "name": "AceIt Studios",
-            "url": "https://aceitstudios.co.uk/"
-          },
-          {
-            "@type": "WebSite",
-            "@id": "https://acetmua.aceitstudios.co.uk/#website",
-            "url": "https://acetmua.aceitstudios.co.uk/",
-            "name": "Ace TMUA",
-            "description": "Focused TMUA lessons, original practice questions, full-length mock papers and progress insights.",
-            "inLanguage": "en-GB",
-            "publisher": {
-              "@id": "https://aceitstudios.co.uk/#organization"
-            }
-          },
-          {
-            "@type": "SoftwareApplication",
-            "@id": "https://acetmua.aceitstudios.co.uk/#app",
-            "name": "Ace TMUA",
-            "url": "itms-apps://apps.apple.com/app/ace-tmua/id6795617802",
-            "description": "A TMUA preparation app with focused lessons, original practice questions, full mock papers and progress tracking.",
-            "applicationCategory": "EducationalApplication",
-            "operatingSystem": "iOS",
-            "publisher": {
-              "@id": "https://aceitstudios.co.uk/#organization"
-            }
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://aceitstudios.co.uk/#organization",
+                "name": "AceIt Studios",
+                "url": "https://aceitstudios.co.uk/"
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://acetmua.aceitstudios.co.uk/#website",
+                "url": "https://acetmua.aceitstudios.co.uk/",
+                "name": "Ace TMUA",
+                "description": "Focused TMUA lessons, original practice questions, full-length mock papers and progress insights.",
+                "inLanguage": "en-GB",
+                "publisher": {
+                  "@id": "https://aceitstudios.co.uk/#organization"
+                }
+              },
+              {
+                "@type": "SoftwareApplication",
+                "@id": "https://acetmua.aceitstudios.co.uk/#app",
+                "name": "Ace TMUA",
+                "url": "itms-apps://apps.apple.com/app/ace-tmua/id6795617802",
+                "description": "A TMUA preparation app with focused lessons, original practice questions, full mock papers and progress tracking.",
+                "applicationCategory": "EducationalApplication",
+                "operatingSystem": "iOS",
+                "publisher": {
+                  "@id": "https://aceitstudios.co.uk/#organization"
+                }
+              }
+            ]
           }
-        ]
-      }
+
+          (function () {
+        // Detect typical in-app browser user agents
+        const isEmbeddedWebview = /Instagram|TikTok|FBAN|FBAV|Twitter|LinkedIn|Snapchat|Line/i.test(
+          navigator.userAgent || navigator.vendor || window.opera
+        );
+
+        if (isEmbeddedWebview) {
+          const notice = document.getElementById('webview-notice');
+          if (notice) {
+            notice.style.display = 'block';
+          }
+        }
+      })();
     </script>
 
     <link rel="stylesheet" href="css/site.css" />
