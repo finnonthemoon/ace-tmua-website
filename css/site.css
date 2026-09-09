@@ -196,29 +196,6 @@ ul {
   mask-image: linear-gradient(to bottom, black, transparent 82%);
 }
 
-.hero-orb {
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(1px);
-  pointer-events: none;
-}
-
-.hero-orb--one {
-  top: -220px;
-  right: -150px;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(255, 139, 31, 0.42), transparent 68%);
-}
-
-.hero-orb--two {
-  bottom: -330px;
-  left: -260px;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(255, 214, 155, 0.48), transparent 68%);
-}
-
 .hero-grid {
   position: relative;
   z-index: 2;
@@ -269,7 +246,7 @@ ul {
   line-height: 1.68;
 }
 
-.waitlist-card {
+.download-card {
   position: relative;
   max-width: 650px;
   padding: 24px;
@@ -284,7 +261,7 @@ ul {
   backdrop-filter: blur(18px);
 }
 
-.waitlist-card::after {
+.download-card::after {
   position: absolute;
   top: -70px;
   right: -55px;
@@ -295,12 +272,12 @@ ul {
   content: "";
 }
 
-.waitlist-heading {
+.download-heading {
   position: relative;
   z-index: 1;
 }
 
-.waitlist-count {
+.availability-label {
   display: inline-flex;
   margin-bottom: 11px;
   padding: 6px 10px;
@@ -313,14 +290,14 @@ ul {
   border-radius: 999px;
 }
 
-.waitlist-heading h2 {
+.download-heading h2 {
   margin-bottom: 6px;
   font-size: clamp(1.55rem, 3vw, 2rem);
   letter-spacing: -0.04em;
   line-height: 1;
 }
 
-.waitlist-heading p {
+.download-heading p {
   max-width: 540px;
   margin-bottom: 18px;
   color: var(--muted);
@@ -376,19 +353,19 @@ ul {
   transform: none;
 }
 
-.waitlist-note,
+.download-note,
 .waitlist-status {
   position: relative;
   z-index: 1;
   font-size: 0.72rem;
 }
 
-.waitlist-note {
+.download-note {
   margin: 12px 2px 0;
   color: #81736b;
 }
 
-.waitlist-note a {
+.download-note a {
   font-weight: 800;
   text-underline-offset: 2px;
 }
@@ -484,6 +461,46 @@ ul {
   border-color: var(--line);
 }
 
+.button--app-store {
+  min-height: 48px;
+  padding: 0 24px;
+  color: #fff;
+  white-space: nowrap;
+  background: #000;
+  border-color: #686868;
+  border-radius: 10px;
+}
+
+.button--app-store:hover,
+.button--app-store:focus-visible {
+  background: #1c1c1e;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+.button--compact {
+  min-height: 42px;
+  padding: 0 16px;
+  font-size: 0.86rem;
+}
+
+.button--plans {
+  padding-inline: 20px;
+}
+
+.button__icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.download-cta-group {
+  display: flex;
+  margin-top: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .button--light {
   color: var(--dark);
   background: #fff;
@@ -557,35 +574,6 @@ ul {
   height: auto;
   overflow: hidden;
   border-radius: 36px;
-}
-
-.math-mark {
-  position: absolute;
-  z-index: 3;
-  display: grid;
-  width: 64px;
-  height: 64px;
-  place-items: center;
-  color: var(--dark);
-  background: #fff;
-  font-family: Georgia, serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  border: 1px solid rgba(67, 39, 20, 0.08);
-  border-radius: 18px;
-  box-shadow: 0 18px 35px rgba(72, 35, 11, 0.18);
-}
-
-.math-mark--one {
-  top: 65px;
-  right: 12px;
-  transform: rotate(9deg);
-}
-
-.math-mark--two {
-  bottom: 78px;
-  left: 4px;
-  transform: rotate(-11deg);
 }
 
 .proof-strip {
@@ -724,38 +712,29 @@ ul {
 
 .feature-card {
   position: relative;
-  min-height: 340px;
+  min-height: 285px;
   overflow: hidden;
   padding: 32px;
-  border: 1px solid rgba(51, 32, 18, 0.08);
-  border-radius: 26px;
-}
-
-.feature-card::after {
-  position: absolute;
-  right: -45px;
-  bottom: -65px;
-  width: 210px;
-  height: 210px;
-  border: 34px solid rgba(255, 255, 255, 0.44);
-  border-radius: 50%;
-  content: "";
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(76, 43, 20, 0.05);
 }
 
 .feature-card--orange {
-  background: #ffe4c5;
+  border-top: 4px solid var(--orange);
 }
 
 .feature-card--blue {
-  background: var(--blue);
+  border-top: 4px solid #4d93d9;
 }
 
 .feature-card--purple {
-  background: var(--purple);
+  border-top: 4px solid #7b68b8;
 }
 
 .feature-card--green {
-  background: var(--green);
+  border-top: 4px solid #3f9a6c;
 }
 
 .feature-number {
@@ -765,16 +744,13 @@ ul {
   letter-spacing: 0.1em;
 }
 
-.feature-icon {
-  display: grid;
-  width: 58px;
-  height: 58px;
-  margin: 48px 0 27px;
-  place-items: center;
-  color: #fff;
-  background: var(--ink);
-  font-size: 1.5rem;
-  border-radius: 17px;
+.feature-label {
+  margin: 38px 0 12px;
+  color: var(--orange);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .feature-card h3 {
@@ -802,7 +778,7 @@ ul {
 .screenshot-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 24px 18px;
 }
 
 .screenshot-card {
@@ -824,14 +800,6 @@ ul {
 .screenshot-window img {
   width: 100%;
   height: auto;
-}
-
-.screenshot-card--home .screenshot-window img {
-  transform: translateY(-2%);
-}
-
-.screenshot-card--learn .screenshot-window img {
-  transform: translateY(-1%);
 }
 
 .screenshot-card figcaption {
@@ -1925,7 +1893,7 @@ ul {
     margin-inline: auto;
   }
 
-  .waitlist-card,
+  .download-card,
   .hero-facts {
     margin-inline: auto;
   }
@@ -2055,7 +2023,7 @@ ul {
     font-size: 1rem;
   }
 
-  .waitlist-card {
+  .download-card {
     padding: 20px;
     text-align: left;
   }
@@ -2102,16 +2070,6 @@ ul {
   .phone {
     width: 270px;
     transform: none;
-  }
-
-  .math-mark {
-    width: 50px;
-    height: 50px;
-    font-size: 1.3rem;
-  }
-
-  .math-mark--one {
-    right: -2px;
   }
 
   .proof-grid,
@@ -2170,8 +2128,8 @@ ul {
     padding: 25px;
   }
 
-  .feature-icon {
-    margin-top: 35px;
+  .feature-label {
+    margin-top: 30px;
   }
 
   .plan-card {
